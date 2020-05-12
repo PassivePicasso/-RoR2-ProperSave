@@ -36,7 +36,7 @@ namespace ProperSave
         public static bool IsOldTLCDefined { get; private set; }
 
         public static string ExecutingDirectory { get; } = Assembly.GetExecutingAssembly().Location.Replace("\\ProperSave.dll", "");
-        public static string SavesDirectory { get; } = $"{ExecutingDirectory}\\Saves";
+        public static string SavesDirectory { get; } = System.IO.Path.Combine(Application.persistentDataPath, "ProperSave", "Saves");
         private static bool IsLoadingScene { get; set; }
         private static bool FirstRunStage { get; set; }
         private static SaveData Save { get; set; }
